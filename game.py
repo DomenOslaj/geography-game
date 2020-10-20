@@ -5,9 +5,6 @@ import random
 capital_city_dict = {"Austria": "Vienna", "Slovenia": "Ljubljana", "Italy": "Rome", "Germany": "Berlin",
                      "Croatia": "Zagreb", "Hungary": "Budapest"}
 
-# chose random state
-random_state = random.choice(list(capital_city_dict))
-
 
 # ask user for  capital city of that state
 def user_guess():
@@ -23,11 +20,14 @@ def play_game(guess):
             print("Game: You are correct!")
             break
         else:
-            print("Game: I don`t understand you, try again.")
+            print("Game: Not correct, try again.")
 
 
 # opening selection
 while True:
+    # chose random state
+    random_state = random.choice(list(capital_city_dict))
+
     selection = input("Would you like to A) play a game, B) exit: ")
     if selection.lower() == "a":
         play_game(user_guess)
